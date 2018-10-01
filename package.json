@@ -1,0 +1,29 @@
+{
+  "name": "spotify-tracker",
+  "version": "1.0.0",
+  "description": "Tracks a user's Spotify usage.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielisgr8/Spotify-Tracker.git"
+  },
+  "keywords": [
+    "Spotify",
+    "server",
+    "WebSocket"
+  ],
+  "author": "Daniel Schubert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielisgr8/Spotify-Tracker/issues"
+  },
+  "homepage": "https://github.com/danielisgr8/Spotify-Tracker#readme",
+  "dependencies": {
+	"ws": "^6.0.0",
+	"express": "^4.16.3"
+  }
+}

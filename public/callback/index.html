@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Callback</title>
+		<script src="moment.js"></script>
+		<script src="Chart.min.js"></script>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="headerContainer">
+			<table id="header">
+				<tbody>
+					<tr>
+						<td id="td0">Home</td>
+						<td id="td1">Top</td>
+						<td id="td2">Graph</td>
+						<td id="td3">Switch Users</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="pageHome">
+			<p>Home</p>
+		</div>
+
+		<div id="pageTop">
+			<form id="topForm">
+				<select name="type">
+					<option value="tracks">Tracks</option>
+					<option value="artists">Artists</option>
+				</select>
+				<select name="time_range">
+					<option value="short_term">Short term</option>
+					<option value="medium_term">Medium term</option>
+					<option value="long_term">Long term</option>
+				</select>
+				<button type="submit">Submit</button>
+			</form>
+			<ol id="topList"></ol>
+		</div>
+
+		<div id="pageGraph">
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>
