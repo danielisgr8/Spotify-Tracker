@@ -5,7 +5,8 @@ const app = express();
 const WebSocket = require("ws");
 
 const CLIENT_ID = "fb87a8dcc6504073a292ae657458c3ea";
-const CLIENT_SECRET = "90ee5523614c46bca967600a038e7286";
+const CSFile = fs.readFileSync("./CLIENT_SECRET");
+const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);
 const REDIRECT_URI = "http://localhost/callback";
 const HTTP_PORT = process.env.PORT || 80;
 const WSS_PORT = 9090;
