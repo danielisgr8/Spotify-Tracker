@@ -1,15 +1,17 @@
 const https = require("https");
 const url = require("url");
+const fs = require("fs");
 const express = require("express");
 const app = express();
 const WebSocket = require("ws");
 
 const CLIENT_ID = "fb87a8dcc6504073a292ae657458c3ea";
-const CSFile = fs.readFileSync("./CLIENT_SECRET");
-const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);
 const REDIRECT_URI = "http://localhost/callback";
 const HTTP_PORT = process.env.PORT || 80;
 const WSS_PORT = 9090;
+
+const CSFile = fs.readFileSync("./CLIENT_SECRET");
+const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);
 
 app.get("/login", (req, res) => {
 	let scopes = "user-top-read user-read-recently-played user-library-read";
