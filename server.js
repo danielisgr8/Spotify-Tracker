@@ -4,13 +4,23 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 const WebSocket = require("ws");
+const commandLineArgs = require("command-line-args");
 
-const CLIENT_ID = "fb87a8dcc6504073a292ae657458c3ea";
-const REDIRECT_URI = "http://localhost/callback";
-const HTTP_PORT = process.env.PORT || 80;
-const WSS_PORT = 9090;
+const optionDefinitions = [
+    { name: "redirectUri", alias: "r", type: String, defaultValue: "http://localhost/callback" },
+	{ name: "httpPort", type: Number, defaultValue: 80 },
+	{ name: "wsPort", type: Number, defaultValue: 9090 },
+    { name: "clientID", alias: "c", type: String, defaultValue: "fb87a8dcc6504073a292ae657458c3ea"},
+    { name: "secretFile", alias: "s", type: String, defaultValue: "./CLIENT_SECRET" }
+];
+const options = commandLineArgs(optionDefinitions);
 
-const CSFile = fs.readFileSync("./CLIENT_SECRET");
+const CLIENT_ID = options.clientID;
+const REDIRECT_URI = options.redirectUri;
+const HTTP_PORT = options.httpPort;
+const WSS_PORT = options.wsPort;
+
+const CSFile = fs.readFileSync(options.secretFile);
 const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);
 
 app.get("/login", (req, res) => {
