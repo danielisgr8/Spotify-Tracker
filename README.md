@@ -1,2 +1,2 @@
 # Spotify-Tracker
-Analysize your Spotify usage
+Analyze your Spotify usage
