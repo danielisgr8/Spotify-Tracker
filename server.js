@@ -9,7 +9,6 @@ const commandLineArgs = require("command-line-args");
 const optionDefinitions = [
     { name: "redirectUri", alias: "r", type: String, defaultValue: "http://localhost/callback" },
 	{ name: "httpPort", type: Number, defaultValue: 80 },
-	{ name: "wsPort", type: Number, defaultValue: 9090 },
     { name: "clientID", alias: "c", type: String, defaultValue: "fb87a8dcc6504073a292ae657458c3ea"},
     { name: "secretFile", alias: "s", type: String, defaultValue: "./CLIENT_SECRET" }
 ];
@@ -18,7 +17,6 @@ const options = commandLineArgs(optionDefinitions);
 const CLIENT_ID = options.clientID;
 const REDIRECT_URI = options.redirectUri;
 const HTTP_PORT = options.httpPort;
-const WSS_PORT = options.wsPort;
 
 const CSFile = fs.readFileSync(options.secretFile);
 const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);

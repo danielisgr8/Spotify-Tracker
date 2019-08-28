@@ -9,6 +9,5 @@ One server is used to serve client-side files and interface with Spotify. This c
 |----------------------|----------|--------|------------------------------------|--------------------------------------------------------------------------|
 | Redirect URI         | r        | string | `http://localhost/callback`        | Where Spotify should redirect the user after authorization.              |
 | HTTP port            | httpPort | number | `80`                               | The port to run the HTTP server on.                                      |
-| WebSocket port       | wsPort   | number | `9090`                             | The port to run the WebSocket server on.                                 |
 | Client ID            | c        | string | `fb87a8dcc6504073a292ae657458c3ea` | The client ID of the Spotify app. Defaults to my client ID.              |
 | Secret file location | s        | string | `./CLIENT_SECRET`                  | The location of a file containing the client secret for the Spotify app. |
