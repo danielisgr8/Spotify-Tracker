@@ -16,7 +16,7 @@ const options = commandLineArgs(optionDefinitions);
 
 const CLIENT_ID = options.clientID;
 const REDIRECT_URI = options.redirectUri;
-const HTTP_PORT = options.httpPort;
+const HTTP_PORT = options.port;
 
 const CSFile = fs.readFileSync(options.secretFile);
 const CLIENT_SECRET = CSFile.toString("utf8", 0, CSFile.length);
