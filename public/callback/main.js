@@ -107,6 +107,7 @@ ws.on("topArtists", (data) => {
 	});
 });
 
+const loadingMessage = document.getElementById("loading-message");
 const ctx = document.getElementById("canvas").getContext("2d");
 ws.on("savedTracks", (data) => {
 	let currentTrackCt = 0;
@@ -167,5 +168,6 @@ ws.on("savedTracks", (data) => {
 		}
 	}
 
+	loadingMessage.style.display = "none";
 	const myChart = new Chart(ctx, config);
 });

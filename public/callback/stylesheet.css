@@ -8,17 +8,10 @@ body {
 	background-color: #8D99AE;
 }
 
-#header {
-
-}
-
 #header > tbody > tr > td {
 	width: 50px;
 	border-right: 1px black solid;
 	text-align: center;
 	cursor: pointer;
-}
-
-#header > tbody > tr > td > p {
-	margin: 8px auto;
+	padding: 8px 2px;
 }
