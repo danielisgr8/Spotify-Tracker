@@ -8,10 +8,7 @@ const pages = [pageHome, pageTop, pageGraph];
 showPage(0);
 
 document.getElementById("header").onclick = (e) => {
-	console.log(e.currentTarget);
-	console.log(e.target);
 	if(e.target != e.currentTarget && e.target.tagName == "TD") {
-		console.log("happened");
 		const index = parseInt(e.target.id.substring(2));
 		showPage(index);
 
@@ -35,8 +32,8 @@ topForm.onsubmit = (e) => {
 }
 
 // TODO: explain regex
-// TODO: allow configuring between ws and wss
-const ws = new WebSocket("wss://" + window.location.hostname + /(.*)\/callback/.exec(window.location.pathname)[1]);
+const wsProtocol = window.location.protocol === "http:" ? "ws://" : "wss://";
+const ws = new WebSocket(wsProtocol + window.location.hostname + /(.*)\/callback/.exec(window.location.pathname)[1]);
 
 const wsEvents = {};
 ws.on = (event, callback) => {
