@@ -34,7 +34,7 @@ topForm.onsubmit = (e) => {
 	e.preventDefault();
 }
 
-const ws = new WebSocket("ws://" + window.location.hostname + ":9090");
+const ws = new WebSocket("ws://" + window.location.hostname);
 
 const wsEvents = {};
 ws.on = (event, callback) => {

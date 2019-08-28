@@ -40,15 +40,13 @@ app.get("/callback", (req, res) => {
 	} else {
 		res.sendFile(__dirname + "/public/callback");
 	}
-
-	let code = req.query.code;
 });
 
 app.use(express.static("./public", { "extensions": ["html"] }));
 
-app.listen(HTTP_PORT, () => { console.log("Server running on port " + HTTP_PORT); });
+const httpServer = app.listen(HTTP_PORT, () => { console.log("Server running on port " + HTTP_PORT); });
 
-const wss = new WebSocket.Server({ port: WSS_PORT }, () => { console.log("WebSocket server running on port " + WSS_PORT) });
+const wss = new WebSocket.Server({ server: httpServer });
 
 wss.on("connection", (ws) => {
 	ws.on("message", (msg) => {
