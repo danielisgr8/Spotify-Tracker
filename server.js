@@ -8,7 +8,7 @@ const commandLineArgs = require("command-line-args");
 
 const optionDefinitions = [
     { name: "redirectUri", alias: "r", type: String, defaultValue: "http://localhost/callback" },
-	{ name: "httpPort", type: Number, defaultValue: 80 },
+	{ name: "port", alias: "p", type: Number, defaultValue: 80 },
     { name: "clientID", alias: "c", type: String, defaultValue: "fb87a8dcc6504073a292ae657458c3ea"},
     { name: "secretFile", alias: "s", type: String, defaultValue: "./CLIENT_SECRET" }
 ];
