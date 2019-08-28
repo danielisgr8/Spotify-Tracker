@@ -28,7 +28,6 @@ app.get("/login", (req, res) => {
 					  "&response_type=code" +
 					  "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
 					  "&scope=" + encodeURIComponent(scopes);
-	console.log(redirectURL);
 	res.redirect(redirectURL);
 });
 
@@ -77,6 +76,8 @@ wss.on("callbackCode", (ws, wsData) => {
 			if(!data.error) {
 				ws.spotify = data;
 				getSavedTracks(ws);
+			} else {
+				console.log("Error in getting token: " + data.error);
 			}
 		});
 	});
